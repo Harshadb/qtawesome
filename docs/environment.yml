@@ -5,5 +5,4 @@ channels:
 
 dependencies:
 - pyqt5
-- qtpy
-- six
+- Qt

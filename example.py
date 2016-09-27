@@ -4,7 +4,7 @@
 import sys
 
 # Third party imports
-from qtpy import QtCore, QtWidgets
+from Qt import QtCore, QtWidgets
 from qtawesome.iconic_font import unichr
 
 # Local imports

@@ -86,7 +86,7 @@ spin_button.setIcon(spin_icon)
 - QtAwesome comes bundled with Font Awesome and Elusive Icons, but it can also
   be used with other iconic fonts. The `load_font` function allows to load
   other fonts dynamically.
-- QtAwesome relies on the [QtPy](https://github.com/spyder-ide/qtpy.git)
+- QtAwesome relies on the [Qt.py](https://github.com/mottosso/Qt.py)
   project as a compatibility layer on the top ot PyQt or PySide.
 
 ## License
