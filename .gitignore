@@ -15,3 +15,6 @@ _templates/
 
 # OS X
 .DS_Store
+
+# PyCharm
+.idea/
