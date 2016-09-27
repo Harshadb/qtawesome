@@ -17,12 +17,15 @@ methods returning instances of ``QIcon``.
 from __future__ import print_function
 import json
 import os
+import sys
 
 # Third party imports
 from qtpy.QtCore import QObject, QPoint, QRect, qRound, Qt
 from qtpy.QtGui import (QColor, QFont, QFontDatabase, QIcon, QIconEngine,
                         QPainter, QPixmap)
-from six import unichr
+
+# Python 2 and 3 cross-compatibility
+unichr = chr if sys.version_info >= (3, 0) else unichr
 
 
 _default_options = {
