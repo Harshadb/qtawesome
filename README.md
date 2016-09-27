@@ -1,4 +1,6 @@
-# QtAwesome
+# QtAwesome (with Qt.py)
+
+_This fork is refactored to use [Qt.py](https://github.com/mottosso/Qt.py) as dependency instead of [qtpy](https://github.com/spyder-ide/qtpy.git)_
 
 [![Build Status](https://travis-ci.org/spyder-ide/qtawesome.svg?branch=master)](https://travis-ci.org/spyder-ide/qtawesome)
 [![Documentation Status](https://readthedocs.org/projects/qtawesome/badge/?version=latest)](http://qtawesome.readthedocs.org/en/latest/?badge=latest)
