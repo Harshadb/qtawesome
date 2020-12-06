@@ -8,7 +8,7 @@ class Spin:
         self.interval, self.step = interval, step
         self.info = {}
 
-    def _update(self, parent_widget):
+    def _update(self):
         if self.parent_widget in self.info:
             timer, angle, step = self.info[self.parent_widget]
 
@@ -16,14 +16,14 @@ class Spin:
                 angle = 0
 
             angle += step
-            self.info[parent_widget] = timer, angle, step
-            parent_widget.update()
+            self.info[self.parent_widget] = timer, angle, step
+            self.parent_widget.update()
 
     def setup(self, icon_painter, painter, rect):
 
         if self.parent_widget not in self.info:
             timer = QTimer()
-            timer.timeout.connect(lambda: self._update(self.parent_widget))
+            timer.timeout.connect(self._update)
             self.info[self.parent_widget] = [timer, 0, self.step]
             timer.start(self.interval)
         else:
@@ -38,4 +38,4 @@ class Spin:
 class Pulse(Spin):
 
     def __init__(self, parent_widget):
-        Spin.__init__(self, parent_widget, interval=300, step=45)
+        super().__init__(parent_widget, interval=300, step=45)
