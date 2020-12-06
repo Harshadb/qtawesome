@@ -20,9 +20,9 @@ import os
 import sys
 
 # Third party imports
-from Qt.QtCore import QObject, QPoint, QRect, qRound, Qt
-from Qt.QtWidgets import (QColor, QFont, QFontDatabase, QIcon, QIconEngine,
-                          QPainter, QPixmap)
+from PySide2.QtCore import QObject, QPoint, QRect, Qt
+from PySide2.QtGui import (QColor, QFont, QFontDatabase, QIcon, QIconEngine,
+                           QPainter, QPixmap)
 
 # Python 2 and 3 cross-compatibility
 unichr = chr if sys.version_info >= (3, 0) else unichr
@@ -104,7 +104,7 @@ class CharIconPainter:
         # The reason why the glyph size is smaller than the icon size is to
         # account for font bearing.
 
-        draw_size = 0.875 * qRound(rect.height() * options['scale_factor'])
+        draw_size = 0.875 * round(rect.height() * options['scale_factor'])
         prefix = options['prefix']
 
         # Animation setup hook
