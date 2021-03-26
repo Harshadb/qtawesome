@@ -14,9 +14,10 @@ methods returning instances of ``QIcon``.
 """
 
 # Standard library imports
-from __future__ import print_function
+from __future__ import print_function, unicode_literals
 import json
 import os
+import struct
 import sys
 
 # Third party imports
@@ -25,7 +26,17 @@ from PySide2.QtGui import (QColor, QFont, QFontDatabase, QIcon, QIconEngine,
                            QPainter, QPixmap)
 
 # Python 2 and 3 cross-compatibility
-unichr = chr if sys.version_info >= (3, 0) else unichr
+# unichr = chr if sys.version_info >= (3, 0) else unichr
+
+
+def unichar(i):
+    try:
+        if sys.version_info >= (3, 0):
+            return chr(i)
+        else:
+            return unichr(i)
+    except ValueError:
+        return struct.pack('i', i).decode('utf-32')
 
 
 _default_options = {
@@ -190,7 +201,7 @@ class IconicFont(QObject):
         def hook(obj):
             result = {}
             for key in obj:
-                result[key] = unichr(int(obj[key], 16))
+                result[key] = unichar(int(obj[key], 16))
             return result
 
         if directory is None:

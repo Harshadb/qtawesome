@@ -1,10 +1,9 @@
 
 import sys
 
-from qtpy import QtCore, QtGui, QtWidgets
+from Qt import QtCore, QtGui, QtWidgets
 
-import qtawesome
-
+from creaturecode.vendor import qtawesome
 
 # TODO: Set icon colour and copy code with color kwarg
 
@@ -21,7 +20,7 @@ class IconBrowser(QtWidgets.QMainWindow):
     """
 
     def __init__(self):
-        super().__init__()
+        super(IconBrowser, self).__init__()
         self.setMinimumSize(400, 300)
         self.setWindowTitle('QtAwesome Icon Browser')
 
@@ -149,7 +148,7 @@ class IconListView(QtWidgets.QListView):
     """
 
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(IconListView, self).__init__(parent)
         self.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
 
     def resizeEvent(self, event):
@@ -170,13 +169,13 @@ class IconListView(QtWidgets.QListView):
         self.setGridSize(QtCore.QSize(tileWidth, tileWidth))
         self.setIconSize(QtCore.QSize(iconWidth, iconWidth))
 
-        return super().resizeEvent(event)
+        return super(IconListView, self).resizeEvent(event)
 
 
 class IconModel(QtCore.QStringListModel):
 
     def __init__(self, iconColor):
-        super().__init__()
+        super(IconModel, self).__init__()
         self._iconColor = iconColor
 
     def flags(self, index):
@@ -198,7 +197,7 @@ class IconModel(QtCore.QStringListModel):
         if role == QtCore.Qt.DecorationRole:
             iconString = self.data(index, role=QtCore.Qt.DisplayRole)
             return qtawesome.icon(iconString, color=self._iconColor)
-        return super().data(index, role)
+        return super(IconModel, self).data(index, role)
 
 
 def run():
