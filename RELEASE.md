@@ -2,6 +2,8 @@ To release a new version of qtawesome on PyPI:
 
 * git fetch upstream && git checkout master && git merge upstream/master
 
+* Close the current milestone on Github
+
 * git clean -xfdi
 
 * Update CHANGELOG.md with
@@ -19,6 +21,8 @@ To release a new version of qtawesome on PyPI:
 * python setup.py sdist
 
 * python setup.py bdist_wheel
+
+* twine check dist/*
 
 * twine upload dist/*
 
