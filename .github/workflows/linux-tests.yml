@@ -35,6 +35,7 @@ jobs:
            auto-update-conda: false
            auto-activate-base: false
            python-version: ${{ matrix.PYTHON_VERSION }}
+           conda-channels: conda-forge
       - name: Install dependencies
         shell: bash -l {0}
         run: conda env update --file requirements/environment.yml
