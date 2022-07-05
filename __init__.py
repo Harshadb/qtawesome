@@ -1,1 +1,1 @@
-import qtawesome
+from . import qtawesome

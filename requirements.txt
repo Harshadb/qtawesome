@@ -1,0 +1,7 @@
+setuptools
+codecov
+pytest
+pytest-qt
+pytest-cov
+Qt.py
+PySide2

@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from qtpy.QtGui import QPalette, QColor
+from Qt.QtGui import QPalette, QColor
 
 # Constant to reference default themes
 DEFAULT_DARK_PALETTE = 'Dark'

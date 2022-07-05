@@ -1,4 +1,6 @@
-# QtAwesome
+# QtAwesome (with Qt.py)
+
+_This fork is refactored to use [Qt.py](https://github.com/mottosso/Qt.py) as dependency instead of [qtpy](https://github.com/spyder-ide/qtpy.git)_
 
 [![license](https://img.shields.io/pypi/l/qtawesome.svg)](./LICENSE)
 [![pypi version](https://img.shields.io/pypi/v/qtawesome.svg)](https://pypi.org/project/qtawesome/)

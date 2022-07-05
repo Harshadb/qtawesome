@@ -20,10 +20,10 @@ import os
 import warnings
 
 # Third party imports
-from qtpy.QtCore import QByteArray, QObject, QPoint, QRect, Qt
-from qtpy.QtGui import (QColor, QFont, QFontDatabase, QIcon, QIconEngine,
-                        QPainter, QPixmap, QTransform, QPalette)
-from qtpy.QtWidgets import QApplication
+from Qt.QtCore import QByteArray, QObject, QPoint, QRect, Qt
+from Qt.QtGui import (QColor, QFont, QFontDatabase, QIcon, QIconEngine,
+                      QPainter, QPixmap, QTransform, QPalette)
+from Qt.QtWidgets import QApplication
 
 # Linux packagers, please set this to True if you want to make qtawesome
 # use system fonts

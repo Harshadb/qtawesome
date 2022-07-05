@@ -4,5 +4,5 @@ channels:
  - https://conda.anaconda.org/spyder-ide
 
 dependencies:
-- pyqt
+- PySide2
 - Qt.py
