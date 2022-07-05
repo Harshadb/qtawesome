@@ -7,8 +7,8 @@ from Qt import QtCore, QtWidgets
 import pytest
 
 # Local imports
-from ...qtawesome.icon_browser import IconBrowser
-from ...qtawesome.styles import DEFAULT_DARK_PALETTE
+from qtawesome.icon_browser import IconBrowser
+from qtawesome.styles import DEFAULT_DARK_PALETTE
 
 
 @pytest.fixture
