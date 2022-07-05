@@ -12,7 +12,7 @@ _This fork is refactored to use [Qt.py](https://github.com/mottosso/Qt.py) as de
 [![Github build status](https://github.com/spyder-ide/qtawesome/workflows/Tests/badge.svg)](https://github.com/spyder-ide/qtawesome/actions)
 [![Documentation Status](https://readthedocs.org/projects/qtawesomedocs/badge/?version=latest)](https://qtawesomedocs.readthedocs.io/en/latest/?badge=latest)
 
-*Copyright © 2015–2021 Spyder Project Contributors*
+*Copyright © 2015–2022 Spyder Project Contributors*
 
 
 ## Description
