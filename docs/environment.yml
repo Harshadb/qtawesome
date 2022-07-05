@@ -5,4 +5,4 @@ channels:
 
 dependencies:
 - pyqt
-- qtpy
+- Qt.py

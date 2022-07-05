@@ -20,7 +20,7 @@ import hashlib
 import os
 
 # Third party imports
-from qtpy import QtCore, QtWidgets, QtGui
+from Qt import QtCore, QtWidgets, QtGui
 
 # Local imports
 from ._version import __version__, version_info
@@ -301,7 +301,7 @@ def font(prefix, size):
     This can be used to render text using the iconic font directly::
 
         import qtawesome as qta
-        from qtpy import QtWidgets
+        from Qt import QtWidgets
 
         label = QtWidgets.QLabel(unichr(0xf19c) + ' ' + 'Label')
         label.setFont(qta.font('fa', 16))
