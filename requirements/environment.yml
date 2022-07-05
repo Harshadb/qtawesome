@@ -7,4 +7,4 @@ dependencies:
 - pytest
 - pytest-cov
 - pytest-qt
-- Qt.py
+- conda-forge::Qt.py
