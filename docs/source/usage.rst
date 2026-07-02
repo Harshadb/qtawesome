@@ -10,21 +10,23 @@ The following prefixes are currently available to use:
 
 -  `FontAwesome`_:
 
-   -  FA 5.9.0 features 1,534 free icons in different styles:
+   - FA 6.7.2 features 2,060 free icons in different styles:
 
-      -  ``fa5`` prefix has `152 icons in the "regular" style.`_
-      -  ``fa5s`` prefix has `1000 icons in the "solid" style.`_
-      -  ``fa5b`` prefix has `449 icons of various brands.`_
+      - ``fa6`` prefix has `163 icons in the "regular" style.`_
+      - ``fa6s`` prefix has `1402 icons in the "solid" style.`_
+      - ``fa6b`` prefix has `495 icons of various brands.`_
 
-   -  ``fa`` is the legacy `FA 4.7 version with its 675 icons`_ but
-      **all** of them (*and more!*) are part of FA 5.x so you should
-      probably use the newer version above.
+   -  FA 5.15.4 features 1,608 free icons in different styles:
+
+      -  ``fa5`` prefix has `151 icons in the "regular" style.`_
+      -  ``fa5s`` prefix has `1001 icons in the "solid" style.`_
+      -  ``fa5b`` prefix has `456 icons of various brands.`_
 
 -  ``ei`` prefix holds `Elusive Icons 2.0 with its 304 icons`_.
 
 -  `Material Design Icons`_:
 
-   -  ``mdi6`` prefix holds `Material Design Icons 6.3.95 with its 6395 icons.`_
+   -  ``mdi6`` prefix holds `Material Design Icons 6.9.96 with its 6997 icons.`_
 
    -  ``mdi`` prefix holds `Material Design Icons 5.9.55 with its 5955 icons.`_
 
@@ -32,20 +34,22 @@ The following prefixes are currently available to use:
 
 - ``ri`` prefix holds `Remix Icon 2.5.0 with its 2271 icons.`_
 
--  ``msc`` prefix holds Microsoft's `Codicons 0.0.25 with its 385 icons.`_
+- ``msc`` prefix holds Microsoft's `Codicons 0.0.36 with its 569 icons.`_
 
 .. _FontAwesome: https://fontawesome.com
-.. _152 icons in the "regular" style.: https://fontawesome.com/icons?d=gallery&s=regular&m=free
-.. _1000 icons in the "solid" style.: https://fontawesome.com/icons?d=gallery&s=solid&m=free
-.. _449 icons of various brands.: https://fontawesome.com/icons?d=gallery&s=brands&m=free
-.. _FA 4.7 version with its 675 icons: https://fontawesome.com/v4.7.0/icons/
+.. _163 icons in the "regular" style.: https://fontawesome.com/v6/search?o=r&ic=free&s=regular
+.. _1402 icons in the "solid" style.: https://fontawesome.com/v6/search?o=r&ic=free&s=solid
+.. _495 icons of various brands.: https://fontawesome.com/v6/search?o=r&ic=free&ip=brands
+.. _151 icons in the "regular" style.: https://fontawesome.com/v5/search?o=r&ic=free&s=regular
+.. _1001 icons in the "solid" style.: https://fontawesome.com/v5/search?o=r&ic=free&s=solid
+.. _456 icons of various brands.: https://fontawesome.com/v5/search?ic=brands
 .. _Elusive Icons 2.0 with its 304 icons: http://elusiveicons.com/icons/
-.. _Material Design Icons: https://cdn.materialdesignicons.com/
-.. _Material Design Icons 6.3.95 with its 6395 icons.: https://cdn.materialdesignicons.com/6.3.95/
+.. _Material Design Icons: https://pictogrammers.com/library/mdi/
+.. _Material Design Icons 6.9.96 with its 6997 icons.: https://cdn.materialdesignicons.com/6.9.96/
 .. _Material Design Icons 5.9.55 with its 5955 icons.: https://cdn.materialdesignicons.com/5.9.55/
 .. _Phosphor 1.3.0 with its 4470 icons (894 icons * 5 weights\: Thin, Light, Regular, Bold and Fill).: https://github.com/phosphor-icons/phosphor-icons
 .. _Remix Icon 2.5.0 with its 2271 icons.: https://github.com/Remix-Design/RemixIcon
-.. _Codicons 0.0.25 with its 385 icons.: https://github.com/microsoft/vscode-codicons
+.. _Codicons 0.0.36 with its 569 icons.: https://github.com/microsoft/vscode-codicons
 
 Examples
 ~~~~~~~~
@@ -58,15 +62,25 @@ Examples
 
 .. code:: python
 
-   # Get FontAwesome 5.x icons by name in various styles by name
+   # Get FontAwesome 6.x icons by name in various styles:
+   fa6_icon = qta.icon('fa6.flag')
+   fa6_button = QtWidgets.QPushButton(fa6_icon, 'Font Awesome 6! (regular)')
+
+   fa6s_icon = qta.icon('fa6s.flag')
+   fa6s_button = QtWidgets.QPushButton(fa6s_icon, 'Font Awesome 6! (solid)')
+
+   fa6b_icon = qta.icon('fa6b.github')
+   fa6b_button = QtWidgets.QPushButton(fa6b_icon, 'Font Awesome 6! (brands)')
+
+   # Get FontAwesome 5.x icons by name in various styles:
    fa5_icon = qta.icon('fa5.flag')
-   fa5_button = QtWidgets.QPushButton(fa5_icon, 'Font Awesome! (regular)')
+   fa5_button = QtWidgets.QPushButton(fa5_icon, 'Font Awesome 5! (regular)')
 
    fa5s_icon = qta.icon('fa5s.flag')
-   fa5s_button = QtWidgets.QPushButton(fa5s_icon, 'Font Awesome! (solid)')
+   fa5s_button = QtWidgets.QPushButton(fa5s_icon, 'Font Awesome 5! (solid)')
 
    fa5b_icon = qta.icon('fa5b.github')
-   fa5b_button = QtWidgets.QPushButton(fa5b_icon, 'Font Awesome! (brands)')
+   fa5b_button = QtWidgets.QPushButton(fa5b_icon, 'Font Awesome 5! (brands)')
 
    # Get Elusive icons by name
    asl_icon = qta.icon('ei.asl')
@@ -115,7 +129,7 @@ Examples
                            color_active='orange')
    music_button = QtWidgets.QPushButton(styling_icon, 'Styling')
 
-- Set alpha in colors
+- Set alpha in colors:
 
 .. code:: python
 
@@ -137,6 +151,16 @@ Examples
                            color_on_active='yellow')
    toggle_button = QtWidgets.QPushButton(toggle_icon, 'Toggle')
    toggle_button.setCheckable(True)
+
+- Define the way to draw icons (`text`- default for icons without animation, `path` - default for icons with animations, `glyphrun` and `image`):
+
+.. code:: python
+
+   # Icon drawn with the `image` option
+   drawn_image_icon = qta.icon('ri.truck-fill',
+                            options=[{'draw': 'image'}])
+   drawn_image_button = QtWidgets.QPushButton(drawn_image_icon,
+                                              'Icon drawn as an image')
 
 -  Stack multiple icons:
 
@@ -162,27 +186,38 @@ Examples
 
 .. code:: python
 
-   # Spin icons
+   # -- Spin icons
    spin_button = QtWidgets.QPushButton(' Spinning icon')
-   spin_icon = qta.icon('fa5s.spinner', color='red',
-                        animation=qta.Spin(spin_button))
+   animation = qta.Spin(spin_button)
+   spin_icon = qta.icon('fa5s.spinner', color='red', animation=animation)
    spin_button.setIcon(spin_icon)
 
-   # Pulse icons
+   # Stop animation when needed
+   animation.stop()
+
+   # -- Pulse icons
    pulse_button = QtWidgets.QPushButton(' Pulsing icon')
-   pulse_icon = qta.icon('fa5s.spinner', color='green',
-                        animation=qta.Pulse(pulse_button))
+   animation = qta.Pulse(pulse_button, autostart=False)
+   pulse_icon = qta.icon('fa5s.spinner', color='green', animation=animation)
    pulse_button.setIcon(pulse_icon)
 
-   # Stacked spin icons
+   # Start and stop the animation when needed
+   animation.start()
+   animation.stop()
+
+   # -- Stacked spin icons
    stack_spin_button = QtWidgets.QPushButton('Stack spin')
+   animation = qta.Spin(stack_spin_button)
    options = [{'scale_factor': 0.4,
-               'animation': qta.Spin(stack_spin_button)},
+               'animation': animation},
                {'color': 'blue'}]
    stack_spin_icon = qta.icon('ei.asl', 'fa5.square',
                               options=options)
    stack_spin_button.setIcon(stack_spin_icon)
    stack_spin_button.setIconSize(QtCore.QSize(32, 32))
+
+   # Stop animation when needed
+   animation.stop()
 
 -  Apply font label rendering:
 
@@ -196,14 +231,18 @@ Examples
 
 .. code:: python
 
-   # Spining icon widget
+   # -- Spinning icon widget
    spin_widget = qta.IconWidget()
-   spin_icon = qta.icon('mdi.loading', color='red',
-                        animation=qta.Spin(spin_widget))
+   animation = qta.Spin(spin_widget)
+   spin_icon = qta.icon('mdi.loading', color='red', animation=animation)
    spin_widget.setIcon(spin_icon)
 
-   # simple widget
-   simple_widget = qta.IconWidget('mdi.web', color='blue')
+   # Stop animation when needed
+   animation.stop()
+
+   # -- Simple widget
+   simple_widget = qta.IconWidget('mdi.web', color='blue',
+                                  size=QtCore.QSize(16, 16))
 
 Screenshot
 ~~~~~~~~~~

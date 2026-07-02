@@ -1,8 +1,8 @@
 channels:
   - conda-forge
 dependencies:
-- pyqt
+- pyqt>=5.15
 - pytest
 - pytest-cov
 - pytest-qt
-- conda-forge::Qt.py
+- qtpy

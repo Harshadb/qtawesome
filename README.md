@@ -9,10 +9,13 @@ _This fork is refactored to use [Qt.py](https://github.com/mottosso/Qt.py) as de
 [![OpenCollective Backers](https://opencollective.com/spyder/backers/badge.svg?color=blue)](#backers)
 [![Join the chat at https://gitter.im/spyder-ide/public](https://badges.gitter.im/spyder-ide/spyder.svg)](https://gitter.im/spyder-ide/public)<br>
 [![PyPI status](https://img.shields.io/pypi/status/qtawesome.svg)](https://github.com/spyder-ide/qtawesome)
-[![Github build status](https://github.com/spyder-ide/qtawesome/workflows/Tests/badge.svg)](https://github.com/spyder-ide/qtawesome/actions)
-[![Documentation Status](https://readthedocs.org/projects/qtawesomedocs/badge/?version=latest)](https://qtawesomedocs.readthedocs.io/en/latest/?badge=latest)
+[![Github Windows build status](https://github.com/spyder-ide/qtawesome/workflows/Windows%20tests/badge.svg)](https://github.com/spyder-ide/qtawesome/actions)
+[![Github Linux build status](https://github.com/spyder-ide/qtawesome/workflows/Linux%20tests/badge.svg)](https://github.com/spyder-ide/qtawesome/actions)
+[![Github MacOS build status](https://github.com/spyder-ide/qtawesome/workflows/Macos%20tests/badge.svg)](https://github.com/spyder-ide/qtawesome/actions)
+[![Documentation Status](https://readthedocs.org/projects/qtawesome/badge/?version=latest)](https://qtawesome.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/spyder-ide/qtawesome/branch/master/graph/badge.svg?token=Cylan0teq1)](https://codecov.io/gh/spyder-ide/qtawesome)
 
-*Copyright © 2015–2022 Spyder Project Contributors*
+*Copyright © 2015- Spyder Project Contributors*
 
 
 ## Description
@@ -50,19 +53,23 @@ The following prefixes are currently available to use:
 
 - [**FontAwesome**](https://fontawesome.com):
 
-  - FA 5.9.0 features 1,534 free icons in different styles:
+  - FA 6.7.2 features 2,060 free icons in different styles:
 
-    - `fa5` prefix has [152 icons in the "**regular**" style.](https://fontawesome.com/icons?d=gallery&s=regular&m=free)
-    - `fa5s` prefix has [1000 icons in the "**solid**" style.](https://fontawesome.com/icons?d=gallery&s=solid&m=free)
-    - `fa5b` prefix has [449 icons of various **brands**.](https://fontawesome.com/icons?d=gallery&s=brands&m=free)
+    - `fa6` prefix has [163 icons in the "**regular**" style.](https://fontawesome.com/v6/search?o=r&ic=free&s=regular)
+    - `fa6s` prefix has [1402 icons in the "**solid**" style.](https://fontawesome.com/v6/search?o=r&ic=free&s=solid)
+    - `fa6b` prefix has [495 icons of various **brands**.](https://fontawesome.com/v6/search?o=r&ic=free&ip=brands)
 
-  - `fa` is the legacy [FA 4.7 version with its 675 icons](https://fontawesome.com/v4.7.0/icons/) but **all** of them (*and more!*) are part of FA 5.x so you should probably use the newer version above.
+  - FA 5.15.4 features 1,608 free icons in different styles:
+
+    - `fa5` prefix has [151 icons in the "**regular**" style.](https://fontawesome.com/v5/search?o=r&ic=free&s=regular)
+    - `fa5s` prefix has [1001 icons in the "**solid**" style.](https://fontawesome.com/v5/search?o=r&ic=free&s=solid)
+    - `fa5b` prefix has [456 icons of various **brands**.](https://fontawesome.com/v5/search?ic=brands)
 
 - `ei` prefix holds [**Elusive Icons** 2.0 with its 304 icons](http://elusiveicons.com/icons/).
 
-- [**Material Design Icons**](https://cdn.materialdesignicons.com)
+- [**Material Design Icons**](https://pictogrammers.com/library/mdi/)
 
-  - `mdi6` prefix holds [**Material Design Icons** 6.3.95 with its 6395 icons.](https://cdn.materialdesignicons.com/6.3.95/)
+  - `mdi6` prefix holds [**Material Design Icons** 6.9.96 with its 6997 icons.](https://cdn.materialdesignicons.com/6.9.96/)
 
   - `mdi` prefix holds [**Material Design Icons** 5.9.55 with its 5955 icons.](https://cdn.materialdesignicons.com/5.9.55/)
 
@@ -70,7 +77,7 @@ The following prefixes are currently available to use:
 
 - `ri` prefix holds [**Remix Icon** 2.5.0 with its 2271 icons.](https://github.com/Remix-Design/RemixIcon)
 
-- `msc` prefix holds Microsoft's [**Codicons** 0.0.25 with its 385 icons.](https://github.com/microsoft/vscode-codicons)
+- `msc` prefix holds Microsoft's [**Codicons** 0.0.36 with its 569 icons.](https://github.com/microsoft/vscode-codicons)
 
 ### Examples
 
@@ -81,13 +88,21 @@ import qtawesome as qta
 - Use Font Awesome, Elusive Icons, Material Design Icons, Phosphor, Remix Icon or Microsoft's Codicons.
 
 ```python
-# Get FontAwesome 5.x icons by name in various styles:
+# Get FontAwesome 6.x icons by name in various styles:
+fa6_icon = qta.icon('fa6.flag')
+fa6_button = QtWidgets.QPushButton(fa6_icon, 'Font Awesome 6! (regular)')
+fa6s_icon = qta.icon('fa6s.flag')
+fa6s_button = QtWidgets.QPushButton(fa6s_icon, 'Font Awesome 6! (solid)')
+fa6b_icon = qta.icon('fa6b.github')
+fa6b_button = QtWidgets.QPushButton(fa6b_icon, 'Font Awesome 6! (brands)')
+
+# or FontAwesome 5.x icons by name in various styles:
 fa5_icon = qta.icon('fa5.flag')
-fa5_button = QtWidgets.QPushButton(fa5_icon, 'Font Awesome! (regular)')
+fa5_button = QtWidgets.QPushButton(fa5_icon, 'Font Awesome 5! (regular)')
 fa5s_icon = qta.icon('fa5s.flag')
-fa5s_button = QtWidgets.QPushButton(fa5s_icon, 'Font Awesome! (solid)')
+fa5s_button = QtWidgets.QPushButton(fa5s_icon, 'Font Awesome 5! (solid)')
 fa5b_icon = qta.icon('fa5b.github')
-fa5b_button = QtWidgets.QPushButton(fa5b_icon, 'Font Awesome! (brands)')
+fa5b_button = QtWidgets.QPushButton(fa5b_icon, 'Font Awesome 5! (brands)')
 
 # or Elusive Icons:
 asl_icon = qta.icon('ei.asl')
@@ -144,14 +159,27 @@ stack_button = QtWidgets.QPushButton(camera_ban, 'Stack')
 stack_button.setIconSize(QtCore.QSize(32, 32))
 ```
 
+- Define the way to draw icons (`text`- default for icons without animation, `path` - default for icons with animations, `glyphrun` and `image`)
+
+```python
+# Icon drawn with the `image` option
+drawn_image_icon = qta.icon('ri.truck-fill',
+                            options=[{'draw': 'image'}])
+drawn_image_button = QtWidgets.QPushButton(drawn_image_icon,
+                                           'Icon drawn as an image')
+```
+
 - Animations
 
 ```python
 # Spining icons
 spin_button = QtWidgets.QPushButton(' Spinning icon')
-spin_icon = qta.icon('fa5s.spinner', color='red',
-                     animation=qta.Spin(spin_button))
+animation = qta.Spin(spin_button)
+spin_icon = qta.icon('fa5s.spinner', color='red', animation=animation)
 spin_button.setIcon(spin_icon)
+
+# Stop the animation when needed
+animation.stop()
 ```
 
 - Display Icon as a widget
@@ -159,18 +187,29 @@ spin_button.setIcon(spin_icon)
 ```python
 # Spining icon widget
 spin_widget = qta.IconWidget()
-spin_icon = qta.icon('mdi.loading', color='red',
-                     animation=qta.Spin(spin_widget))
+animation = qta.Spin(spin_widget, autostart=False)
+spin_icon = qta.icon('mdi.loading', color='red', animation=animation)
 spin_widget.setIcon(spin_icon)
 
 # Simple icon widget
-simple_widget = qta.IconWidget('mdi.web', color='blue')
+simple_widget = qta.IconWidget('mdi.web', color='blue', 
+                               size=QtCore.QSize(16, 16))
+
+# Start and stop the animation when needed
+animation.start()
+animation.stop()
 ```
 
 - Screenshot
 
-![QtAwesome screenshot](qtawesome-screenshot.gif)
+![QtAwesome screenshot](https://raw.githubusercontent.com/spyder-ide/qtawesome/master/qtawesome-screenshot.gif)
 
+
+To check these options you can launch the `example.py` script and pass to it the options as arguments. For example, to test how the icons could look using the `glyphrun` draw option, you can run something like:
+
+```
+python example.py draw=glyphrun
+```
 
 ## Other features
 
@@ -189,7 +228,7 @@ name that should be used to create that icon!
 
 Once installed, run `qta-browser` from a shell to start the browser.
 
-![QtAwesomeIconbrowser](qtawesome-browser.png)
+![qta-browser](https://raw.githubusercontent.com/spyder-ide/qtawesome/master/qtawesome-browser.png)
 
 
 ## License

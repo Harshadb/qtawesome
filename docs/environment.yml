@@ -1,8 +1,10 @@
 name: qtawesome_docs
 
 channels:
- - https://conda.anaconda.org/spyder-ide
+ - https://conda.anaconda.org/conda-forge
 
 dependencies:
-- PySide2
+- pyqt
 - Qt.py
+- sphinx_rtd_theme
+- pip
